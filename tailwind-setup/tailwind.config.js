@@ -4,7 +4,11 @@ export default {
     "../**/*.{html,js}"
   ],
   theme: {
-    extend: {},
+    extend: {
+     backgroundImage: {
+    drum: "url('/drum-bg-cover.png')",
+  },
+    },
   },
   plugins: [],
 }
