@@ -1,90 +1,300 @@
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-      <link rel="stylesheet" href="../tailwind-setup/output.css" />
-    </head>
-    <body>
-      <main class="relative h-screen w-full overflow-hidden">
-        <!-- Background Image  Mobile-->
-        <img
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day-1 | Drum Kit</title>
+  <link rel="stylesheet" href="../tailwind-setup/output.css">
 
-          src="assets/images/mobile-bg-cover.png"
-          alt="drum-kit-bg-mobile"
-          class="absolute inset-0 h-full w-full object-cover object-[5%_20%] z-0 sm:hidden"
-        />
 
-          <!-- Background Image For Desktop -->
-        <img
+  <!--  playing effect Applied on keypress or click  -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-          src="assets/images/drum-bg-cover.png"
-          alt="drum-kit-bg"
-          class="absolute inset-0 h-full w-full object-cover object-[5%_20%] z-0 hidden sm:block"
-        />
+<body>
+  <main
+  class="
+  h-screen
+  w-full
+ relative
+ overflow-hidden 
 
-        <!--  Overlay -->
-        <div
-          class="absolute inset-0 z-10 bg-linear-to-b from-black/10 via-black/20 to-black/90"
-        ></div>
+  "
+  >
 
-        <div id="drum-kit-container" 
-        class="
-        absolute
-        top-[58%]
-        left-1/2
-        transform
-        -translate-1/2
-        z-20
-        flex
-      items-center
-      w-100
-      sm:w-auto
-      
-      gap-10
-        ">
+  <!-- Desktop bg-cover -->
+  <img 
+  class="
+  h-full
+  w-full
+  object-cover
+  object-[0%_20%]
+  hidden
+  sm:block
+  "
+  src="assets/images/drum-bg-cover.png" 
+  alt="desktop-bg-cover">
 
-        <div class="key
-        flex flex-col items-center justify-evenly
-    sm:h-20 sm:w-24
+  <!-- Mobile bg-cover -->
+  <img 
+  class="
+   h-full
+  w-full
+  object-cover
+  object-center
+  block
+  sm:hidden
+  "
+  src="assets/images/mobile-bg-cover.png" 
+  alt="mobile-bg-cover">
+  
+
+  <!-- Overlay -->
+  <div id="overlay"
+  class="
+  h-full
+  w-full
+  absolute
+  inset-0
+  z-10
+  bg-linear-to-b from-black/10 via-black/5 to-black/70"
+  ></div>
+
+
+  <div id="drum-kit-container"
+  class="
+   absolute
+   inset-[60%_0_0_50%]
+   -translate-1/2
+  z-20
+  grid
+  grid-cols-3
+  place-items-center
+  sm:flex
+  sm:justify-center
+  sm:items-center
+  gap-10
+  w-full
+  cursor-pointer
+
+
+  "
+  
+  >
+
+ 
+<div  
+  class="
+    keys
     rounded-xl
-    border border-blue-500/40
-    bg-white/5
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
     backdrop-blur-md
-    shadow-lg shadow-blue-900/40
     transition-all duration-200
-    hover:scale-105
-    hover:border-blue-800
-        "
-        data-key="65"
-        >
+    py-2 px-6
+    sm:py-3 sm:px-9
+    transform translate-y-0
+   
+  "
+  data-key="65"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    A
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    CLAP
+  </div>
+</div>
 
-          <div class="
-        
-          key-type
-            text-4xl
-    font-bold
-    text-slate-100
-          "
-        
-          >A</div>
+<div
+  class="
+    keys
+    rounded-xl
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
+    backdrop-blur-md
+    transition-all duration-200
+    py-2 px-6
+    sm:py-3 sm:px-9
+   
+  "
+  data-key="83"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    S
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    HIHAT
+  </div>
+</div>
 
-          <div class="
-        
-          key-sound
-          text-sm
-    uppercase
-    tracking-widest
-    text-amber-400
-          "
-     
-          >CLAP</div>
-        </div> 
-       
-      </div>
+<div
+  class="
+    keys
+    rounded-xl
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
+    backdrop-blur-md
+    transition-all duration-200
+    py-2 px-6
+    sm:py-3 sm:px-9
+   
+  "
+  data-key="68"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    D
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    KICK
+  </div>
+</div>
 
-      <audio src="assets/audios/clap.wav" data-key="65"></audio> <!-- A key sound  -->
+<div
+  class="
+    keys
+    rounded-xl
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
+    backdrop-blur-md
+    transition-all duration-200
+    py-2 px-4
+    sm:py-3 sm:px-5
+   
+  "
+  data-key="70"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    F
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    OPENHAT
+  </div>
+</div>
+
+<div
+  class="
+    keys
+    rounded-xl
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
+    backdrop-blur-md
+    transition-all duration-200
+    py-2 px-6
+    sm:py-3 sm:px-9
+   
+  "
+  data-key="71"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    G
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    BOOM
+  </div>
+</div>
+
+<div
+  class="
+    keys
+    rounded-xl
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
+    backdrop-blur-md
+    transition-all duration-200
+    py-2 px-6
+    sm:py-3 sm:px-9
+   
+  "
+  data-key="72"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    H
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    RIDE
+  </div>
+</div>
+
+<div
+  class="
+    keys
+    rounded-xl
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
+    backdrop-blur-md
+    transition-all duration-200
+    py-2 px-6
+    sm:py-3 sm:px-9
+   
+  "
+  data-key="74"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    J
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    SNARE
+  </div>
+</div>
+
+<div
+  class="
+    keys
+    rounded-xl
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
+    backdrop-blur-md
+    transition-all duration-200
+    py-2 px-7
+    sm:py-3 sm:px-10
+   
+  "
+  data-key="75"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    K
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    TOM
+  </div>
+</div>
+
+<div
+  class="
+    keys
+    rounded-xl
+    bg-linear-to-b from-[#0b1220]/90 to-[#05080f]/90
+    border border-cyan-400/30
+    shadow-[0_0_25px_rgba(34,211,238,0.15)]
+    backdrop-blur-md
+    transition-all duration-200
+    py-2 px-6
+    sm:py-3 sm:px-9
+   
+  "
+  data-key="76"
+>
+  <div class="text-3xl sm:text-4xl font-bold text-slate-100 text-center mb-2">
+    L
+  </div>
+  <div class="text-xs tracking-[0.25em] sm:font-semibold text-cyan-300 text-center">
+    TINK
+  </div>
+</div>
+
+
+  </div>
+
+   <audio src="assets/audios/clap.wav" data-key="65"></audio> <!-- A key sound  -->
       <audio src="assets/audios/hihat.wav" data-key="83"></audio> <!-- S key sound  -->
       <audio src="assets/audios/kick.wav" data-key="68"></audio> <!-- D key sound  -->
       <audio src="assets/audios/openhat.wav" data-key="70"></audio> <!-- F key sound  -->
@@ -93,29 +303,8 @@
       <audio src="assets/audios/snare.wav" data-key="74"></audio> <!-- J key sound  -->
       <audio src="assets/audios/tom.wav" data-key="75"></audio> <!-- K key sound  -->
       <audio src="assets/audios/tink.wav" data-key="76"></audio> <!-- L key sound  -->
+  </main>
 
-      </main>
-
-      <script >
-
-        //  const drumContainer= document.getElementById('drum-kit-container');
-        // //  console.log(drumContainer);
-
-        // // Event delegation Technique
-        // window.addEventListener('keydown',(e)=>{
-        //   // console.log(e.keyCode);
-
-        //   const keyCode= e.keyCode;
-        //   const audioTune= document.querySelector(`audio[data-key="${keyCode}"]`);
-          
-        //   audioTune.currentTime=0;
-        //   audioTune.play(); 
-          
-        // })
-           
-      </script>
-    </body>
-  </html>
-
-
-  <!-- a  65 clap, s 83 hihat , d 68 kick,f 70 openhat , g 71 boom , h 72 ride  , j 74 snare ,k 75 tom ,l 76  tink-->
+  <script src="script.js"> </script>
+</body>
+</html>
