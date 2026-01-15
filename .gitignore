@@ -12,3 +12,6 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db
+
+# Ignore output.css file 
+tailwind-setup/output.css
