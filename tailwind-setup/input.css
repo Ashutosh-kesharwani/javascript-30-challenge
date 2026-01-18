@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+
+/* For project-3 theme switcher as 
+REASON:
+Tailwind CSS layers (@layer base/components/utilities) work ONLY at build time.
+Tailwind processes and merges layers only from the CSS file it compiles (input.css).
+
+WHY IT DID NOT WORK:
+This CSS was placed in a separate file and linked directly in HTML.
+Tailwind never sees or processes that file, so the layer logic is ignored.
+
+FIX:
+Move this code into Tailwind's input.css so it gets compiled into output.css.
+
+RULE:
+Any CSS using @layer MUST be inside the Tailwind build pipeline.
+*/
+/* input.css (this is the file Tailwind compiles) */
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* text */
+    --text-primary-color: 15 23 42;
+
+    /* LIGHT THEME GRADIENT */
+    --bg-from: 236 238 234;
+    /* warm grey */
+    --bg-via: 244 246 242;
+    /* creamy */
+    --bg-to: 220 230 245;
+    /* cool hint */
+
+  }
+
+  .dark {
+    /* text */
+    --text-primary-color: 229 231 235;
+
+    /* DARK THEME GRADIENT */
+    /* Dark theme background */
+    --bg-from: 2 6 23;
+    /* near-black navy */
+    --bg-via: 15 23 42;
+    /* deep slate blue */
+    --bg-to: 30 41 59;
+    /* soft slate */
+  }
+
+
+
+}
