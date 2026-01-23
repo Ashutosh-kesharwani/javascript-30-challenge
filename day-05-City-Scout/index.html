@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 05 |</title>
-    <link rel="stylesheet" href="../tailwind-setup/output.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 05 | City-Scout</title>
+  <link rel="stylesheet" href="../tailwind-setup/output.css" />
 </head>
+
 <body>
-    
+  <main
+  class="h-screen w-full text-white flex items-center justify-center relative overflow-hidden 
+         bg-position-[center_top] bg-cover"
+  style="background-image: url('cityscout-desktop.png');"
+>
+  <div class="absolute inset-0 bg-black/40"></div>
+
+ 
+
+    <div class="w-105 relative z-20">
+      <!-- INPUT -->
+      <input
+  id="searchInput"
+  type="text"
+  placeholder="Search city or state..."
+  oninput="handleSearch(event)"
+  class="
+    w-full
+    px-6 py-4
+    rounded-2xl
+    text-lg font-semibold
+    text-slate-900
+    bg-white/90 backdrop-blur-md
+    shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)]
+    placeholder:text-slate-500
+    focus:outline-none
+    focus:ring-4 focus:ring-amber-400/60
+    transition-all duration-300
+  "
+/>
+
+
+      <!-- RESULTS -->
+      <div
+  id="results"
+  class="
+    absolute top-full left-0 w-full mt-3
+    rounded-2xl
+    bg-slate-900/85 backdrop-blur-xl
+    shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]
+    border border-white/10
+    overflow-hidden
+    hidden
+    z-20
+  "
+></div>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
